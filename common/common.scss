@@ -65,6 +65,10 @@ a {
   color: var(--quaternary);
 }
 
+.category-boxes {
+  grid-template-columns: 1fr 1fr;
+}
+
 .category-box-inner {
     display: grid !important;
     grid-template-columns: auto auto;
