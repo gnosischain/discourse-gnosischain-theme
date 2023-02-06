@@ -147,6 +147,124 @@ a {
   color: var(--quaternary);
   border-radius: var(--gc-border-radius);
 }
+.nav-pills > li>a {
+  color: var(--quaternary);
+}
 .btn-primary {
   border-radius: var(--gc-border-radius);
+}
+
+// SEARCH BAR
+.search-widget {
+  #search-term {
+    background: var(--primary);
+    border-radius: 0px;
+    border: 1px solid #637A6F;
+    min-height: 40px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  #search-term::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  .d-icon-search {
+    color: var(--quaternary);
+  }
+
+  .search-link .d-icon {
+    color: var(--quaternary);
+  }
+
+  span.discourse-tag.simple {
+    color: var(--quaternary);
+  }
+
+  span.keyword {
+    color: var(--quartenary);
+  }
+
+  .search-menu .results .label-suffix {
+    color: var(--quartenary);
+  }
+}
+
+// TABLES
+table {
+  th {
+    font-weight: normal;
+    color: var(--quaternary);
+    text-align: left;
+    padding: 0.5em;
+  }
+}
+
+.topic-list-header {
+  tr {
+    border-bottom: none;
+  }
+}
+
+.topic-list-body {
+  border-top: none;
+}
+
+a.title.raw-link.raw-topic-link {
+  color: var(--quaternary);
+}
+
+.topic-list {
+
+  td {
+    color: var(--quaternary);
+  }
+
+  // td.category,
+  // .main-link.clearfix {
+  //    border-left: 6px solid;
+  // }
+
+  tr.has-description,
+  .topic-list-item,
+  .no-description {
+    background: #355F4E;
+  }
+
+  .activity, .num.age.activity {
+    border-right: 3px solid var(--primary);
+  }
+
+  tr.has-description:last-child,
+  .topic-list-item:last-child,
+  .no-description:last-child {
+    border-bottom: 2px solid var(--primary) !important;
+  }
+
+  //"last topic seen" hr
+  tbody > tr.last-visit {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .topic-list-item-separator > td {
+    padding: 1.2rem !important;
+    border: 0;
+  }
+
+  .topic-list-item-separator td {
+    border-bottom: 2px solid var(--primary) !important;
+  }
+
+  //categories boxes
+  .category.category-box {
+    border-top: var(--primary);
+    border-right: var(--primary);
+    border-bottom: var(--primary);
+  }
+
+  .topic-excerpt {
+      color: var(--quartenary);
+  }
+
 }
