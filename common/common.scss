@@ -5,6 +5,12 @@ html {
   color: var(--quaternary); // color: var(--primary);
 }
 
+body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
+    background: none !important;
+    box-shadow: none !important;
+    border-top: none !important;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -81,7 +87,9 @@ a {
         order: 2;
         padding: 2em;
         .aspect-image img {
-          --height: 100px;
+          --custom-height: 100px;
+          height: var(--custom-height) !important;
+          width: calc(var(--custom-height) * var(--aspect-ratio)) !important;
         }
     }
 }
@@ -101,6 +109,9 @@ a {
       .category-box-inner {
         border: none;
         padding: 0;
+        .subcategories {
+          display: none;
+        }
       }
       &:hover {
         box-shadow: 0px 40px 30px 0px rgba(2, 47, 57, 0.1);
@@ -138,6 +149,7 @@ a {
       color: var(--quaternary);
       background: var(--secondary);
       border: 2px solid var(--primary);
+      padding: 10px 20px;
     }
   }
 }
@@ -211,6 +223,10 @@ table {
   border-top: none;
 }
 
+.discourse-tags > a {
+  color: var(--quaternary);
+}
+
 a.title.raw-link.raw-topic-link {
   color: var(--quaternary);
 }
@@ -232,9 +248,9 @@ a.title.raw-link.raw-topic-link {
     background: #355F4E;
   }
 
-  .activity, .num.age.activity {
-    border-right: 3px solid var(--primary);
-  }
+  // .activity, .num.age.activity {
+  //   border-right: 3px solid var(--primary);
+  // }
 
   tr.has-description:last-child,
   .topic-list-item:last-child,
@@ -256,6 +272,16 @@ a.title.raw-link.raw-topic-link {
     border-bottom: 2px solid var(--primary) !important;
   }
 
+  .topic-list-item-separator {
+      .topic-list-data {
+        border-top: none;
+        span {
+          color: #fff;
+          text-transform: capitalize;
+        }
+      }
+  }
+
   //categories boxes
   .category.category-box {
     border-top: var(--primary);
@@ -267,4 +293,12 @@ a.title.raw-link.raw-topic-link {
       color: var(--quartenary);
   }
 
+}
+
+.topic-list-item.visited .topic-list-data,
+.latest-topic-list-item.visited,
+.category-topic-link.visited {
+  a.title:not(.badge-notification) {
+    color: var(--quartenary);
+  }
 }
