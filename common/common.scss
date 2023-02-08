@@ -28,6 +28,7 @@ input[type="color"],
 .d-editor-textarea-wrapper,
 .select-kit-header {
   border-radius: var(--gc-border-radius);
+  text-transform: capitalize;
 }
 
 input[type="text"]:focus,
@@ -301,4 +302,9 @@ a.title.raw-link.raw-topic-link {
   a.title:not(.badge-notification) {
     color: var(--quartenary);
   }
+}
+
+.topic-list-item td:first-child,
+.topic-post {
+  padding: 15px 15px 15px 15px;
 }

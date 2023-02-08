@@ -12,6 +12,9 @@
       "quaternary": "FFFFFF"
     }
   },
+  "assets": {
+      "ABCMaxiRound": "assets/ABCMaxiRound.ttf"
+  },
   "components": [
     "https://github.com/discourse/discourse-search-banner.git"
   ]
