@@ -5,10 +5,18 @@ html {
   color: var(--quaternary); // color: var(--primary);
 }
 
+body {
+    font-family: Inter-Light;
+}
+
 body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
     background: none !important;
     box-shadow: none !important;
     border-top: none !important;
+}
+
+h1, h2, h3 {
+    font-family: ABCMaxiRound-Bold;
 }
 
 input[type="text"],
@@ -81,12 +89,14 @@ a {
     grid-template-columns: auto auto;
     .category-details {
         display: grid;
-        order: 1
+        grid-template-rows: auto 1fr;
+        order: 1;
+        max-width: 300px;
     }
     .category-logo {
         display: grid;
         order: 2;
-        padding: 2em;
+        padding: 10px 5px 10px 5px;
         .aspect-image img {
           --custom-height: 100px;
           height: var(--custom-height) !important;
@@ -134,6 +144,7 @@ a {
       color: var(--quaternary);
       text-align: left;
       padding: 5px 0 0 15px;
+      margin-top: 10px;
     }
 }
 
@@ -288,6 +299,7 @@ a.title.raw-link.raw-topic-link {
     border-top: var(--primary);
     border-right: var(--primary);
     border-bottom: var(--primary);
+    min-height: 190px;
   }
 
   .topic-excerpt {

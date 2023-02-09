@@ -31,6 +31,11 @@ $color-square-webkit-gradient: -webkit-linear-gradient(
 );
 
 @font-face {
-  font-family: ABCMaxiRound;
-  src: url($ABCMaxiRound) format('ttf')
+  font-family: ABCMaxiRound-Bold;
+  src: url($ABCMaxiRound-Bold) format('opentype')
+}
+
+@font-face {
+  font-family: Inter-Light;
+  src: url($Inter-Light) format('opentype')
 }
