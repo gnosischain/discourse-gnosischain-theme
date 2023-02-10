@@ -6,7 +6,8 @@ html {
 }
 
 body {
-    font-family: Inter-Light;
+    font-family: Inter;
+    font-weight: 400;
 }
 
 body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
@@ -16,7 +17,8 @@ body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
 }
 
 h1, h2, h3 {
-    font-family: ABCMaxiRound-Bold;
+    font-family: ABCMaxiRound;
+    font-weight: 400;
 }
 
 input[type="text"],
@@ -97,11 +99,15 @@ a {
         display: grid;
         order: 2;
         padding: 10px 5px 10px 5px;
-        .aspect-image img {
+        .category-logo.aspect-image img {
+            height: auto;
+            width: auto;
+        }
+        /*.aspect-image img {
           --custom-height: 100px;
           height: var(--custom-height) !important;
           width: calc(var(--custom-height) * var(--aspect-ratio)) !important;
-        }
+        }*/
     }
 }
 
@@ -137,6 +143,7 @@ a {
         color: var(--quaternary);
         text-align: left;
         padding: 5px 0 0 15px;
+        font-size: 20px;
       }
     }
 
@@ -145,6 +152,11 @@ a {
       text-align: left;
       padding: 5px 0 0 15px;
       margin-top: 10px;
+      font-size: 16px;
+      line-height: 22px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
     }
 }
 
@@ -162,6 +174,12 @@ a {
       background: var(--secondary);
       border: 2px solid var(--primary);
       padding: 10px 20px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
     }
   }
 }
@@ -178,6 +196,27 @@ a {
   border-radius: var(--gc-border-radius);
 }
 
+// WELCOME TEXT
+.custom-search-banner-wrap {
+  h1 {
+    font-family: 'ABCMaxiRound';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 79px;
+    /* identical to box height */
+    text-align: center;
+  }
+  p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+}
+
 // SEARCH BAR
 .search-widget {
   #search-term {
@@ -187,6 +226,11 @@ a {
     min-height: 40px;
     text-transform: uppercase;
     color: #fff;
+    font-family: ABCMaxiRound;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
   }
 
   #search-term::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
