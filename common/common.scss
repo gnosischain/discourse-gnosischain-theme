@@ -196,6 +196,31 @@ a {
   border-radius: var(--gc-border-radius);
 }
 
+// LOGIN/SIGNUP
+.sign-up-button {
+    color: var(--quartenary);
+    background: #DD7143;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.login-button {
+    border: 1px solid #DD7143;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #DD7143;
+}
+
 // WELCOME TEXT
 .custom-search-banner-wrap {
   h1 {
