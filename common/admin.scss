@@ -5,3 +5,9 @@
 .ember-view {
   color: #ffffff;
 }
+
+.nav-stacked {
+    a {
+        color: var(--quartenary);
+    }
+}
