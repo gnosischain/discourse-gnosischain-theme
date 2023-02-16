@@ -63,6 +63,11 @@ input[type="color"],
             }
         }
     }
+    &.composer-actions {
+      .select-kit-header {
+        background: var(--primary);
+      }
+    }
   }
 }
 .navigation-controls {
@@ -78,6 +83,17 @@ input[type="color"],
             color: var(--quaternary);
             &.active {
                 color: var(--quaternary);
+            }
+        }
+    }
+}
+
+#reply-control {
+    .reply-to {
+        color: var(--quaternary);
+        .reply-details {
+            .d-icon {
+                color: var(--quaternary) !important;
             }
         }
     }
@@ -328,9 +344,69 @@ a {
 
 
 // LOGIN/SIGNUP
+
+// Login/Signup modal
+.login-modal:not(.hidden) {
+    .modal-inner-container {
+        background: none;
+    }
+
+    #login-buttons:not(.hidden) {
+        display: block;
+        text-align: center;
+        .btn-social {
+            padding: 10px 15px 10px 15px;
+            margin-left: -10px;
+            .d-icon {
+                color: #000;
+            }
+        }
+    }
+
+    .login-modal-body.has-alt-auth {
+        border-radius: 10px;
+        .login-left-side {
+            background: var(--primary);
+            color: var(--quaternary);
+            #login-form {
+                input {
+                    background: var(--primary);
+                    color: var(--quaternary);
+                    min-width: 300px;
+                }
+                .alt-placeholder {
+                    background: none;
+                    color: var(--quaternary);
+                }
+            }
+            .login-welcome-header {
+                background: var(--primary);
+            }
+            #login-button {
+                //background: var(--top_header_button);
+                background: #dd7143;
+                min-width: 130px;
+                padding: 10px 5px 10px 5px;
+            }
+            .modal-footer {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+button#login-link,
+button#new-account-link {
+    color: var(--quaternary);
+    font-size: 14px;
+}
+
+// top bar buttons (signup, login)
 .sign-up-button {
     color: var(--quaternary);
-    background: var(--top_header_button);
+    background: #DD7143;
     border-radius: 10px;
     font-family: 'Inter';
     font-style: normal;
@@ -341,7 +417,7 @@ a {
 }
 
 .login-button {
-    border: 1px solid var(--top_header_button);
+    border: 1px solid #DD7143;
     border-radius: 10px;
     font-family: 'Inter';
     font-style: normal;
@@ -349,7 +425,7 @@ a {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: var(--top_header_button);
+    color: #DD7143;
 }
 
 // WELCOME TEXT
@@ -433,6 +509,14 @@ table {
 
 .topic-list-body {
   border-top: none;
+}
+
+#topic-title {
+    h1 {
+        a {
+            color: var(--quaternary);
+        }
+    }
 }
 
 .discourse-tags > a {
