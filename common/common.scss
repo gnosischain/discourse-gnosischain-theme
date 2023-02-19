@@ -344,9 +344,76 @@ a {
 
 
 // LOGIN/SIGNUP
+.create-account:not(.hidden) {
+    background-image: none;
+    .has-alt-auth .create-account-form {
+        display: block;
+    }
+    .modal-inner-container {
+        background: none;
+        border-radius: var(--gc-border-radius);
+    }
+    .modal-body {
+        border-radius: var(--gc-border-radius);
+        background: var(--primary);
+    }
+    .modal-footer {
+        background: var(--primary);
+        border: none;
+        text-align: center;
+        display: block;
+        .btn {
+          background: #dd7143;
+        }
+    }
+    .login-welcome-header {
+        background: var(--primary);
+    }
+    .disclaimer {
+        margin-bottom: 20px;
+        color: var(--quaternary);
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.d-modal.create-account {
+    .modal-footer:before {
+        background-image: none;
+    }
+  .has-alt-auth .login-form,
+  .login-form {
+    background: var(--primary);
+    .input-group {
+      input {
+          background: var(--primary);
+          color: var(--quaternary);
+          border: 1px solid var(--quaternary);
+          min-width: 300px;
+      }
+      .alt-placeholder {
+          background: none;
+          color: var(--quaternary);
+      }
+    }
+  }
+}
 
 // Login/Signup modal
-.login-modal:not(.hidden) {
+.login-modal:not(.hidden),
+.create-account,
+.invites-show {
+    #login-form,
+    .login-form,
+    .invite-form {
+        .input-group {
+            input,
+            span.more-info {
+                color: var(--quaternary);
+            }
+        }
+    }
     .modal-inner-container {
         background: none;
     }
@@ -392,6 +459,10 @@ a {
                 display: block;
                 text-align: center;
                 margin-top: 10px;
+                border: none;
+                // .btn {
+                //   background: #dd7143;
+                // }
             }
         }
     }
