@@ -562,7 +562,47 @@ button#new-account-link {
   }
 }
 
-// TABLES
+// TOPICS
+
+.user-card,
+.group-card {
+    .card-content {
+        color: var(--quaternary);
+        a {
+            color: var(--quaternary);
+        }
+        h3 {
+            color: var(--quaternary);
+        }
+        .desc {
+            color: #6b9b84;
+        }
+    }
+}
+
+.names {
+    a {
+        // color: var(--quaternary);
+        color: #6b9b84 !important;
+    }
+}
+
+.discourse-tag {
+    &.simple,
+    &.simple:visited,
+    &.simple:hover {
+        color: var(--quaternary);
+        background: #1c352a;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        text-transform: Capitalize;
+    }
+}
+
+.discourse-tags > a {
+  color: var(--quaternary);
+}
+
 table {
   th {
     font-weight: normal;
@@ -588,10 +628,6 @@ table {
             color: var(--quaternary);
         }
     }
-}
-
-.discourse-tags > a {
-  color: var(--quaternary);
 }
 
 a.title.raw-link.raw-topic-link {
