@@ -7,3 +7,45 @@
       0 12px 90px 0 rgba(133, 255, 103, 0.1);
   }
 }
+
+.sidebar-section-wrapper {
+    .sidebar-section-header {
+        color: var(--quartenary);
+    }
+    .sidebar-section-header-caret {
+        svg {
+            color: var(--quartenary);
+        }
+    }
+    .sidebar-section-header-wrapper {
+        .sidebar-section-header-button {
+            .d-icon {
+                color: var(--quartenary);
+            }
+        }
+    }
+}
+
+.sidebar-section-link-wrapper {
+    .sidebar-section-link {
+        color: var(--quartenary);
+    }
+
+    .sidebar-section-link-prefix {
+        &.icon,
+        &.span {
+            color: var(--quartenary);
+        }
+    }
+}
+
+.sidebar-more-section-links-details {
+    .sidebar-more-section-links-details-summary {
+        color: var(--quartenary);
+        .sidebar-more-section-links-icon-wrapper {
+            .d-icon {
+                color: var(--quartenary);
+            }
+        }
+    }
+}

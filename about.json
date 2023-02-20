@@ -9,8 +9,23 @@
       "tertiary": "0D251C",
       "header_background": "0D251C",
       "header_primary": "FFFFFF",
-      "quaternary": "FFFFFF"
+      "quaternary": "FFFFFF",
+      "top_header_button": "dd7143"
     }
+  },
+  "assets": {
+      "ABCMaxiRound-Bold": "assets/ABCMaxiRound-Bold.otf",
+      "ABCMaxiRound-Light": "assets/ABCMaxiRound-Light.otf",
+      "ABCMaxiRound-Regular": "assets/ABCMaxiRound-Regular.otf",
+      "Inter-Black": "assets/Inter-Black.ttf",
+      "Inter-Bold": "assets/Inter-Bold.ttf",
+      "Inter-SemiBold": "assets/Inter-SemiBold.ttf",
+      "Inter-ExtraBold": "assets/Inter-ExtraBold.ttf",
+      "Inter-Light": "assets/Inter-Light.ttf",
+      "Inter-ExtraLight": "assets/Inter-ExtraLight.ttf",
+      "Inter-Medium": "assets/Inter-Medium.ttf",
+      "Inter-Regular": "assets/Inter-Regular.ttf",
+      "Inter-Thin": "assets/Inter-Thin.ttf"
   },
   "components": [
     "https://github.com/discourse/discourse-search-banner.git"

@@ -29,3 +29,33 @@ $color-square-webkit-gradient: -webkit-linear-gradient(
   rgba(143, 236, 202, 0.29) 55%,
   rgba(74, 247, 255, 0.08) 100%
 );
+
+@font-face {
+  font-family: ABCMaxiRound;
+  font-weight: 300;
+  src: url($ABCMaxiRound-Light) format('opentype')
+}
+
+@font-face {
+  font-family: ABCMaxiRound;
+  font-weight: 400;
+  src: url($ABCMaxiRound-Regular) format('opentype')
+}
+
+@font-face {
+  font-family: ABCMaxiRound;
+  font-weight: 700;
+  src: url($ABCMaxiRound-Bold) format('opentype')
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 300;
+  src: url($Inter-Light) format('opentype')
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  src: url($Inter-Regular) format('opentype')
+}
