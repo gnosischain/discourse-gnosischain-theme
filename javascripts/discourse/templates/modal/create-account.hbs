@@ -38,7 +38,6 @@
                   id="new-account-email"
                   name="email"
                   class={{value-entered this.accountEmail}}
-                  autofocus="autofocus"
                   {{on "focusout" (action "checkEmailAvailability")}}
                   aria-describedby="account-email-validation"
                   aria-invalid={{this.emailValidation.failed}}
@@ -274,4 +273,18 @@
       </div>
     </DModalBody>
   {{/unless}}
+  <script type="application/javascript">
+  $( document ).ready(function() {
+      $(".create-account-form input").focusin(function (){
+          $(this).next().addClass('placeholderFocus');
+      }).focusout(function () {
+        // remove the placeholder class only if the input field is empty
+        if ( !$(this).val()) {
+          $(this).next().removeClass('placeholderFocus');
+        }
+      });
+
+      $("#new-account-email").focus(); // replace autofocus=autofocus
+  });
+  </script>
 </CreateAccount>

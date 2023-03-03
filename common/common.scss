@@ -139,6 +139,9 @@ input[type="color"]:focus,
         color: var(--top_header_button);
       }
   }
+  .login-button {
+    background: var(--header_background);
+  }
   .d-icon {
     color: var(--primary-low-mid);
   }
@@ -369,6 +372,17 @@ a {
 
 
 // LOGIN/SIGNUP
+
+/**
+* THIS FUNCTIONS GETS CALLED BY SIGNUP/LOGIN PAGES TO CONTROL FOCUS IN/OUT.
+*/
+.placeholderFocus {
+  background: var(--tertiary-hover) !important;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px !important;
+}
+
+
 .create-account:not(.hidden) {
     background-image: none;
     .has-alt-auth .create-account-form {
@@ -404,9 +418,12 @@ a {
 }
 
 .d-modal.create-account {
-    .modal-footer:before {
-        background-image: none;
-    }
+  .modal-body {
+    overflow: scroll;
+  }
+  .modal-footer:before {
+      background-image: none;
+  }
   .has-alt-auth .login-form,
   .login-form {
     background: var(--tertiary);
@@ -436,6 +453,9 @@ a {
             input,
             span.more-info {
                 color: var(--quaternary);
+            }
+            input:focus {
+              border: 1px solid var(--tertiary-hover);
             }
         }
     }
