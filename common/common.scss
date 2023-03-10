@@ -772,6 +772,9 @@ table {
 .topic-list-item td:first-child,
 .topic-post {
   padding: 15px 15px 15px 15px;
+  h1, h2, h3 {
+    font-family: Inter;
+  }
 }
 .post-notice {
   &.old {
