@@ -6,12 +6,11 @@ body {
     font-weight: 400;
 }
 
-// TODO FIXME, why content from admin.scss doesn't get merged
 .admin-content {
-  margin-bottom: 50px;
-  background: var(--secondary)!important;
-  border: 1px solid var(--primary);
-  padding: 5px 5px 5px 15px;
+    margin-bottom: 50px;
+    background: var(--secondary)!important;
+    border: 1px solid var(--primary);
+    padding: 5px 5px 5px 15px;
 }
 
 body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
@@ -329,9 +328,20 @@ a {
   }
 }
 
+
 .d-header-icons {
   .d-icon {
     color: #f0ebdf;
+  }
+  .badge-notification {
+    &.with-icon {
+      &.new-pms {
+        background-color: #dd7143 !important;
+      }
+      &.new-reviewables {
+        background-color: var(--danger);
+      }
+    }
   }
 }
 
@@ -570,7 +580,6 @@ button#new-account-link {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    padding: 10px 20px 15px 20px;
   }
 }
 
@@ -599,6 +608,7 @@ button#new-account-link {
     min-height: 40px;
     text-transform: uppercase;
     color: #fff;
+    /*font-family: ABCMaxiRound;*/
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -780,7 +790,7 @@ table {
 .topic-post {
   padding: 15px 15px 15px 15px;
   h1, h2, h3 {
-    font-family: Inter;
+      font-family: Inter;
   }
 }
 .post-notice {
