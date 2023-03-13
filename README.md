@@ -8,8 +8,8 @@ Official Discourse theme for GnosisChain.
 
 Following setting changes are required for this theme to render properly:
 
-- `top menu` needs to be set to **category, latest, new, unread, top**
-- `desktop category page style` needs to be set to **Boxes with Subcategories**
+- `Basic Setup > top menu` needs to be set to **category, latest, new, unread, top**
+- `Basic Setup > desktop category page style` needs to be set to **Boxes with Subcategories**
 
 ### Discourse Search Banner
 

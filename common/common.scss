@@ -6,6 +6,14 @@ body {
     font-weight: 400;
 }
 
+// TODO FIXME, why content from admin.scss doesn't get merged
+.admin-content {
+  margin-bottom: 50px;
+  background: var(--secondary)!important;
+  border: 1px solid var(--primary);
+  padding: 5px 5px 5px 15px;
+}
+
 body:not(.navigation-categories):not(.navigation-topics) #main-outlet {
     background: none !important;
     box-shadow: none !important;
@@ -591,7 +599,6 @@ button#new-account-link {
     min-height: 40px;
     text-transform: uppercase;
     color: #fff;
-    font-family: ABCMaxiRound;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
