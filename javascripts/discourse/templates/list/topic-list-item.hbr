@@ -6,7 +6,7 @@
 
 <td class="poster-avatar">
   <div>
-    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="medium"}}</a>
+    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="extra_large"}}</a>
   </div>
 </td>
 {{!--
@@ -15,6 +15,8 @@
   with no space between them.
   This causes the topic-post-badge to be considered the same word as "text"
   at the end of the link, preventing it from line wrapping onto its own line.
+
+  imageSize: see available values: /app/assets/javascripts/discourse/app/lib/utilities.js
 --}}
 <td class='main-link clearfix'>
 
