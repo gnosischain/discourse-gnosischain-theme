@@ -26,7 +26,6 @@
                 autocorrect="off"
                 autocapitalize="off"
                 disabled={{this.showSecondFactor}}
-                autofocus="autofocus"
                 tabindex="1"
               />
               <label class="alt-placeholder" for="login-account-name">{{i18n
@@ -161,4 +160,19 @@
   <PluginOutlet @name="login-after-modal-footer" @connectorTagName="div" />
 
   <div class={{this.alertClass}} id="login-alert">{{this.alert}}</div>
+
+  <script type="application/javascript">
+  $( document ).ready(function() {
+      $("#login-form input").focusin(function (){
+          $(this).next().addClass('placeholderFocus');
+      }).focusout(function () {
+        // remove the placeholder class only if the input field is empty
+        if ( !$(this).val()) {
+          $(this).next().removeClass('placeholderFocus');
+        }
+      });
+
+      $("#login-account-name").focus(); // replace autofocus=autofocus
+  });
+  </script>
 </LoginModal>

@@ -4,12 +4,13 @@
   "license_url": "https://github.com/gnosischain/discourse-gnosischain-theme/blob/main/LICENSE",
   "color_schemes": {
     "gc-light": {
-      "primary": "3F5D4E",
-      "secondary": "1C352A",
-      "tertiary": "0D251C",
+      "primary": "FaFaFa",
+      "secondary": "133629",
+      "tertiary": "355F4E",
+      "quaternary": "FaFaFa",
       "header_background": "0D251C",
-      "header_primary": "FFFFFF",
-      "quaternary": "FFFFFF",
+      "header_primary": "EEF4F7",
+      "highlight": "528974",
       "top_header_button": "dd7143"
     }
   },
