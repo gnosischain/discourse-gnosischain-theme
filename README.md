@@ -25,3 +25,16 @@ In the options for the `Showcased Categories` theme component, following changes
 - select the `feed one category` and `feed two category` as per your requirement
 - fill in the `feed one title` and `feed two title` as per your requirement
 - recommended value for `max list length` is `3`.
+
+
+## Installation
+
+Installing the package is quite simple, first of all create a tar.gc package containing the project:
+
+```
+tar --exclude .DS_Store --exclude .github --exclude .git -zcvf gc.tar.gz discourse-gnosischain-theme
+```
+
+In your administration panel, go to Customize > Theme > Install , choose the package and click on install.
+
+You can then choose to make enable the theme by default for all users or let them choose which one to use.
