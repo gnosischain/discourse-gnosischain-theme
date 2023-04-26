@@ -8,12 +8,12 @@ Official Discourse theme for GnosisChain.
 
 Following setting changes are required for this theme to render properly:
 
-- `Basic Setup > top menu` needs to be set to **category, latest, new, unread, top**
-- `Basic Setup > desktop category page style` needs to be set to **Boxes with Subcategories**
+- `Admin Settings > Basic Setup > top menu` needs to be set to **category, latest, new, unread, top**
+- `Admin Settings > Basic Setup > desktop category page style` needs to be set to **Boxes with Subcategories**
 
 ### Discourse Search Banner
 
-In the options for the `discourse-search-banner` theme component, following changes are required for this theme to render properly:
+In the options for the `discourse-search-banner` theme component, the following changes are required for this theme to render properly, set them in `Admin > Customize > Components > discourse-search-banner`:
 
 - `show-on` options needs to be set to **homepage**
 - `background image` can be set as per your requirement
