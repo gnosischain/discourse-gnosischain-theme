@@ -1,0 +1,183 @@
+<PluginOutlet
+  @name="above-discovery-categories"
+  @connectorTagName="div"
+  @outletArgs={{hash
+    categories=this.model.categories
+    categoryPageStyle=this.categoryPageStyle
+    topics=this.model.topics
+  }}
+/>
+
+<DiscoveryCategories @refresh={{action "refresh"}}>
+  {{#if (and this.topicTrackingState.hasIncoming this.isCategoriesRoute)}}
+    <div class="show-more {{if this.hasTopics 'has-topics'}}">
+      <div
+        role="button"
+        class="alert alert-info clickable"
+        {{on "click" this.showInserted}}
+      >
+        <CountI18n
+          @key="topic_count_"
+          @suffix={{this.topicTrackingState.filter}}
+          @count={{this.topicTrackingState.incomingCount}}
+        />
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if
+    (eq this.categoryPageStyle "categories-and-latest-topics-created-date")
+  }}
+    <CategoriesAndLatestTopics
+      @categories={{this.model.categories}}
+      @topics={{this.model.topics}}
+    />
+  {{else}}
+    {{component
+      this.categoryPageStyle
+      categories=this.model.categories
+      topics=this.model.topics
+    }}
+  {{/if}}
+
+</DiscoveryCategories>
+
+<PluginOutlet
+  @name="below-discovery-categories"
+  @connectorTagName="div"
+  @outletArgs={{hash
+    categories=this.model.categories
+    categoryPageStyle=this.categoryPageStyle
+    topics=this.model.topics
+  }}
+/>
+
+<!-- START CUSTOM IMPLEMENTATION -->
+
+<div id="custom-topics-container"></div>
+
+<script>
+// EXECUTE THE CODE ONLY WHEN THE USER VISITS THE HOMEPAGE
+
+if ( window.location.pathname == '/' ){
+  $(document).ready(function () {
+      var _monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var _container = $('<div id="custom-topics-container"></div>');
+      var _contents = $('<div class="contents ember-view"></div>');
+      var _table = $('<table class="topic-list ember-view"></table>');
+      var _table_head = $('<thead class="topic-list-header"></thead>');
+      var _table_body = $('<tbody class="topic-list-body"></tbody>');
+
+      var _thead_content = '<tr>';
+      _thead_content += '<th></th>';
+      _thead_content += '<th data-sort-order="default" class="default topic-list-data" scope="col"><button class="btn-flat bulk-select" title="toggle bulk selection of topics"><svg class="fa d-icon d-icon-list svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#list"></use></svg></button><span>Topic</span></th>';
+      _thead_content += '<th data-sort-order="posters" class="posters topic-list-data" scope="col" aria-label="Posters"><span></span></th>';
+      _thead_content += '<th data-sort-order="posts" class="posts sortable num topic-list-data" scope="col" aria-label="Sort by replies" tabindex="0" role="button" aria-pressed="false"><span>Replies</span></th>';
+      _thead_content += '<th data-sort-order="activity" class="activity sortable num topic-list-data" scope="col" aria-label="Sort by activity" tabindex="0" role="button" aria-pressed="false"><span>Activity</span></th>';
+      _thead_content += '</tr>';
+
+      /*
+      ** Get the latest topics
+      ** Ref: https://docs.discourse.org/#tag/Topics/operation/listLatestTopics
+      */
+      $.ajax('/latest.json').done(function (response, message) {
+          var topics = response.topic_list.topics;
+          /*
+          ** Get categories including subcategories
+          ** Ref: https://docs.discourse.org/#tag/Categories/operation/listCategories
+          */
+          $.ajax('/categories.json?include_subcategories=true').done(function (response, message) {
+              // Transform the list of categories into an object containing as a key the ID of the category.
+              // Subcategories are also mapped into this object.
+              var categories = {};
+              response.category_list.categories.forEach(function (item) {
+                  categories[item.id] = item;
+                  if (item.subcategory_list) {
+                      item.subcategory_list.forEach(function (innerItem) {
+                          categories[innerItem.id] = innerItem;
+                      });
+                  }
+              });
+
+              var _tbody_content = '';
+
+              for (var x=0; x < topics.length-1; x++) {
+                  var topic = topics[x];
+                  console.log(topic);
+
+                  var visited = topic.unseen;
+                  _tbody_content += '<tr data-topic-id="' + topic.id + '" class="topic-list-item ' + visited + ' ember-view">';
+                  _tbody_content += '<td class="poster-avatar">';
+                  _tbody_content += "<div>";
+                  _tbody_content += '<a href="/t/' + topic.slug + '/' + topic.id + '/1" data-user-card="system">';
+
+                  var logo_url = '';
+                  // Always show the logo URL of the parent topic, if the current topic is a subtopic, we must
+                  // get the logo URL of the parent topic.
+                  if (categories[topic.category_id].parent_category_id != undefined) {
+                      logo_url = categories[categories[topic.category_id].parent_category_id].uploaded_logo.url;
+                  } else {
+                      logo_url = categories[topic.category_id].uploaded_logo.url;
+                  }
+                  
+                  _tbody_content += '<img loading="lazy" alt="" src="' + logo_url + '" style="width: 50px; max-height: 50px;" class="avatar" title="system" aria-label="system"></a>';
+                  _tbody_content += "</div>";
+
+                  _tbody_content += '<td class="main-link clearfix">';
+                  _tbody_content += '<span class="link-top-line">';
+                  _tbody_content += '<a href="/t/' + topic.slug + '/' + topic.id + '/1" role="heading" aria-level="2" class="title raw-link raw-topic-link" data-topic-id="' + topic.id + '"> ' + topic.fancy_title + '</a>';
+                  _tbody_content += '<span class="topic-post-badges"></span></span>';
+                  _tbody_content += '</td>';
+
+                  _tbody_content += '<td class="category topic-list-data">';
+
+                  // If the topic is related with a subcategory, we craft the URL in a way it points to the subcategory.
+                  if (categories[topic.category_id].parent_category_id != undefined) {
+                      var parent_category = categories[categories[topic.category_id].parent_category_id].slug;
+                      var child_category = categories[topic.category_id].slug;
+                      _tbody_content += '<a class="badge-wrapper box" href="/c/' + parent_category + '/' + child_category + '/' + topic.category_id + '">';
+                  } else {
+                      var parent_category = categories[topic.category_id].slug;
+                      _tbody_content += '<a class="badge-wrapper box" href="/c/' + parent_category + '/' + topic.category_id + '">';
+                  }
+                  
+                  _tbody_content += '<span class="badge-category-parent-bg" style="background-color: #DD7143;"></span>';
+                  _tbody_content += '<span class="badge-category-bg" style="background-color: #BF633C;"></span>';
+                  _tbody_content += '<span style="color: #FFFFFF;" data-drop-close="true" class="badge-category clear-badge" title=""><span class="category-name">' + categories[topic.category_id].name + '</span></span></a>';
+                  _tbody_content += '</td>';
+
+                  _tbody_content += '<td class="num posts-map posts  topic-list-data" title="This topic has ' + topic.reply_count + ' replies">';
+                  _tbody_content += '<button class="btn-link posts-map badge-posts " aria-label="This topic has ' + topic.reply_count + ' replies"><span class="number">' + topic.reply_count + '</span></button>';
+                  _tbody_content += '</td>';
+
+                  _tbody_content += '<td class="num age coldmap-high activity" title="First post: ' + topic.created_at + ' Posted: ' + topic.last_posted_at + '">';
+                  _tbody_content += '<a class="post-activity" href="/t/' + topic.slug + '/' + topic.id + ' /1">';
+
+                  var last_activity_date = new Date(topic.bumped_at);
+                  var last_activity_timestamp = Math.floor(last_activity_date.getTime() / 1000); // seconds
+                  _tbody_content += '<span class="relative-date" data-time="' + last_activity_timestamp + '" data-format="tiny">' + _monthNames[last_activity_date.getMonth()].slice(0, 3) + ' ' + last_activity_date.getDate() + '</span></a>';
+                  _tbody_content += '</td>';
+
+                  _tbody_content += '</tr>';
+
+              }
+              _table_head.append($(_thead_content));
+              _table_body.append($(_tbody_content));
+
+              _table.append(_table_head);
+              _table.append(_table_body);
+              _contents.append(_table);
+              _container.append(_contents);
+              $('.list-container').after(_container);
+
+          });
+
+      }).fail(function (response, message) {
+          console.log("An error occurred:");
+          console.log(response);
+      });
+  });
+}
+</script>
+
+<!-- END CUSTOM IMPLEMENTATION -->
