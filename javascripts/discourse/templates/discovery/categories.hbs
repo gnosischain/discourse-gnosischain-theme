@@ -116,8 +116,10 @@ if ( window.location.pathname == '/' ){
                   // get the logo URL of the parent topic.
                   if (categories[topic.category_id].parent_category_id != undefined) {
                       logo_url = categories[categories[topic.category_id].parent_category_id].uploaded_logo.url;
-                  } else {
+                  } else if (categories[topic.category_id].uploaded_logo != undefined) {
                       logo_url = categories[topic.category_id].uploaded_logo.url;
+                  } else {
+                      logo_url = '';
                   }
                   
                   _tbody_content += '<img loading="lazy" alt="" src="' + logo_url + '" style="width: 50px; max-height: 50px;" class="avatar" title="system" aria-label="system"></a>';
