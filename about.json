@@ -1,0 +1,30 @@
+{
+  "name": "GnosisChain",
+  "component": false,
+  "about_url": "https://github.com/gnosischain/discourse-gnosischain-theme",
+  "license_url": "https://github.com/gnosischain/discourse-gnosischain-theme/blob/main/LICENSE",
+  "components": [
+    "https://github.com/jordanvidrine/discourse-category-group-boxes.git",
+    "https://github.com/discourse/discourse-clickable-topic.git",
+    "https://github.com/discourse/discourse-search-banner.git"
+  ],
+  "modifiers": {
+    "serialize_topic_excerpts": true
+  },
+  "color_schemes": {
+    "gc-light": {
+      "primary": "FaFaFa",
+      "secondary": "133629",
+      "tertiary": "6ac8a6",
+      "quaternary": "6ac8a6",
+      "header_background": "133629",
+      "header_primary": "FaFaFa",
+      "highlight": "6ac8a6",
+      "danger": "AC2C3B",
+      "danger-medium": "FF8061",
+      "success": "00B460",
+      "love": "FF5F72"
+    }
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}

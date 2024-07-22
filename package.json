@@ -1,0 +1,11 @@
+{
+  "name": "discourse-gnosischain-theme",
+  "version": "1.0.0",
+  "description": "Gnosis Forum Theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosischain/discourse-gnosischain-theme.git"
+  },
+  "author": "Gnosis Chain (https://gnosis.io)",
+  "license": "MIT"
+}
