@@ -69,7 +69,12 @@
     color: var(--primary);
     //// ----------------------
     .mobile-view & {
-      color: var(--secondary);
+      //// ------- CUSTOM -------
+      //// OLD:
+      // color: var(--secondary);
+      //// NEW:
+      color: var(--primary);
+      //// ----------------------
     }
     h1 {
       margin-bottom: 0;
