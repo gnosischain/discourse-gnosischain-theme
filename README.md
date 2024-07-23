@@ -15,11 +15,10 @@ In your administration panel, go to `Customize > Theme > Install`, choose the pa
 You can then choose to enable the theme by default for all users or let them choose which one to use.
 
 ## Components
-    "https://github.com/discourse/discourse-clickable-topic.git",
-    "https://github.com/discourse/discourse-search-banner.git"
+
 - https://github.com/jordanvidrine/discourse-category-group-boxes
 - https://github.com/discourse/discourse-search-banner
-- https://github.com/discourse/discourse-gifs
+- https://github.com/discourse/discourse-clickable-topic
 
 
 ## Setup
@@ -48,6 +47,13 @@ Go to /categories click on tools and then on "Reorder categories":
 - Staff 6
 - Internall staff 7
 - Uncategorized 8
+
+
+### Dark mode
+
+Operating systems and browsers might be enforcing the dark mode automatically.
+
+In order for Discourse to pick up a color palette of your choice for the dark mode, go to `settings > Basic Setup > default dark mode color scheme ID` and choose the right value.
 
 
 ## Resources
