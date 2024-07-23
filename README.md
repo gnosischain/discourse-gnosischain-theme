@@ -51,7 +51,7 @@ Go to /categories click on tools and then on "Reorder categories":
 
 ### Dark mode
 
-Operating systems and browsers might be enforcing the dark mode automatically.
+Operating systems and browsers might enforce the dark mode automatically.
 
 In order for Discourse to pick up a color palette of your choice for the dark mode, go to `settings > Basic Setup > default dark mode color scheme ID` and choose the right value.
 
