@@ -1,4 +1,4 @@
-# GnosisDAO Forum Theme
+# Gnosis Chain Discourse Theme
 
 Custom theme used in the [GnosisDAO Forum](https://forum.gnosis.io/).
 
@@ -7,7 +7,7 @@ Custom theme used in the [GnosisDAO Forum](https://forum.gnosis.io/).
 Installing the package is quite simple, first of all create a tar.gc package containing the project:
 
 ```
-tar --exclude .DS_Store --exclude .github --exclude .git -zcvf gc.tar.gz discourse-gnosischain-theme
+tar --exclude .DS_Store --exclude .github --exclude .git --exclude old_versions -zcvf gc.tar.gz discourse-gnosischain-theme
 ```
 
 In your administration panel, go to `Customize > Theme > Install`, choose the package and click on install.
@@ -53,7 +53,7 @@ Go to /categories click on tools and then on "Reorder categories":
 
 Operating systems and browsers might enforce the dark mode automatically.
 
-In order for Discourse to pick up a color palette of your choice for the dark mode, go to `settings > Basic Setup > default dark mode color scheme ID` and choose the right value.
+In order for Discourse to pick up a color palette of your choice for the dark mode, go to `settings > Basic Setup > default dark mode color scheme ID` and choose the right value for it.
 
 
 ## Resources
