@@ -1,10 +1,11 @@
 {
   "name": "discourse-gnosischain-theme",
-  "version": "0.0.1",
-  "repository": "https://github.com/gnosischain/discourse-gnosischain-theme",
-  "author": "GnosisChain",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint-config-discourse": "^3.2.0"
-  }
+  "version": "1.0.0",
+  "description": "Gnosis Forum Theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosischain/discourse-gnosischain-theme.git"
+  },
+  "author": "Gnosis Chain (https://gnosis.io)",
+  "license": "MIT"
 }
