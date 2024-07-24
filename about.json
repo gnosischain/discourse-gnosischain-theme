@@ -1,8 +1,8 @@
 {
-  "name": "GnosisChain",
+  "name": "Gnosis Chain",
   "component": false,
   "about_url": "https://github.com/gnosischain/discourse-gnosischain-theme",
-  "license_url": "https://github.com/gnosischain/discourse-gnosischain-theme/blob/main/LICENSE",
+  "license_url": "https://github.com/gnosischain/discourse-gnosischain-theme/blob/main/LICENSE.md",
   "components": [
     "https://github.com/jordanvidrine/discourse-category-group-boxes.git",
     "https://github.com/discourse/discourse-clickable-topic.git",
