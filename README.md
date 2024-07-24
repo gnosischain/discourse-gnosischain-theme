@@ -23,21 +23,35 @@ You can then choose to enable the theme by default for all users or let them cho
 
 ## Setup
 
-Fixed category positions (fixed_category_positions) must be checked (URL `/admin/site_settings/category/all_results?filter=fixed_category_positions`).
+In the admin panel go to the settings page and set the following properties.
+
+### Fixed category positions (fixed_category_positions) 
+
+Must be turned on (URL `/admin/site_settings/category/all_results?filter=fixed_category_positions`).
 
 
-Desktop category page style set to `categories and latest topics` ( URL `/admin/site_settings/category/basic?filter=category`).
+### Desktop category page style
 
-Category style set to `bullet`.
+Must be set to `categories and latest topics` (URL `/admin/site_settings/category/basic?filter=category`).
 
-`Top menu` must be set to the following:
+### Category style
+
+Must be set to `bullet`.
+
+### Top menu
+
+Must be set to the following:
 - categories
 - latest
 - top
 - unread
 - new
 
-Go to /categories click on tools and then on "Reorder categories":
+
+### Categories
+
+For Gnosis DAO forum only, go to /categories click on tools and then on "Reorder categories":
+
 - General 0
 - Governance 1
 - Treasury 2
