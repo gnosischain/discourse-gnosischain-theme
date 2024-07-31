@@ -1,4 +1,23 @@
 // custom search banner customizations
+.custom-search-banner-wrap .search-menu .search-input {
+  border-color: var(--tertiary);
+  outline: 1px solid var(--tertiary);
+  border-radius: .5em;
+  
+  
+  .display-search-banner {
+    #main-outlet {
+      background: #1C352A;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    }
+    
+  .btn.search-icon {
+        padding-right: 1.5em;
+    }
 
 .custom-search-banner-wrap {
   margin: 0 auto !important;
@@ -7,11 +26,13 @@
   
   h1 {
     font-size: 4em;
+    text-align: left;
   }
   p {
     font-size: 1.25em !important;
     font-weight: bold;
     margin-bottom: 1em;
+    text-align: left;
   }
   .btn {
     height: 100%;
@@ -19,7 +40,7 @@
   .search-menu input[type="text"] {
     border: 1px solid transparent;
     border-radius: 0.25em;
-    min-height: 40px;
+    min-height: 60px;
     &:focus {
       outline: 3px solid rgba(var(--primary-rgb), 0.35);
     }
@@ -34,8 +55,12 @@
     }
   }
   .search-menu .search-input {
-    border-color: var(--tertiary-hover);
-    outline: 1px solid var(--tertiary-hover);
+    // OLD
+    // border-color: var(--tertiary-hover);
+    // outline: 1px solid var(--tertiary-hover);
+    border: 1px solid var(--secondary-high);
+    border-radius: .5em;
+    padding: 0 1.5em;
   }
   .results {
     top: 43px;
@@ -45,6 +70,7 @@
     top: 3.25em;
     right: 1em;
   }
+  div {margin: 0}
 }
 
 .search-input {
@@ -56,6 +82,35 @@
     padding-top: 2em;
   }
 }
+
+body.has-sidebar-page #main-outlet-wrapper {
+  padding-left: 0px !important;
+  }
+
+.category-box-inner {
+    column-gap: 16px !important;
+}
+
+.sidebar-wrapper {
+  box-shadow: none !important;
+}
+
+.category-box {
+  box-shadow: none !important;
+  border: 1px solid var(--secondary-high);
+  background:transparent !important;
+}
+.category-logo {
+background-color: transparent !important;
+
+}
+
+.custom-category-boxes:not(.above-discovery-categories-outlet) .category-box {
+border-left-width: 1px;
+}
+
+
+
 
 // Ideally the search banner component should be set to use the below-site-header outlet,
 // but this ensures the default works too
@@ -77,11 +132,17 @@
       //// ----------------------
     }
     h1 {
-      margin-bottom: 0;
+      font-size: 3em;
+	    line-height: 1em;
+	    margin-bottom: .5em !important;
     }
     .search-widget {
       margin-top: 2em;
     }
+    p {
+      color: var(--primary-high);
+      }
+    
   }
 }
 
@@ -186,7 +247,8 @@ div.ac-wrap {
   border-radius: 4px;
 }
 .d-header {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+	box-shadow: none;
 }
 
 .d-header-icons .d-icon {
@@ -299,10 +361,16 @@ html {
   }
 }
 
+// Setting the brand typeface
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Unica77LL', sans-serif;
+}
+
 html body #main-outlet {
   margin-top: 30px;
   margin-bottom: 50px;
-  background: var(--secondary);
+  // background: var(--secondary);
+  background: #1e1e1e;
   border-radius: 1em;
   padding: 3em 3em 5%;
   max-width: 1150px;
@@ -606,4 +674,5 @@ html body #main-outlet {
 
 .title-voting {
   padding-left: 14px;
+}
 }
