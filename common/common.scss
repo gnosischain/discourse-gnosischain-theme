@@ -1,31 +1,40 @@
 // custom search banner customizations
 .custom-search-banner-wrap .search-menu .search-input {
+  // OLD 
+  // border-color: var(--secondary);
   border-color: var(--tertiary);
+  // OLD 
+  // outline: 1px solid var(--secondary);
   outline: 1px solid var(--tertiary);
   border-radius: .5em;
   
   
   .display-search-banner {
     #main-outlet {
+      // Deattach the colour from variable
       background: #1C352A;
     }
   }
 
   input {
+    // Override the default color
     background-color: transparent;
     }
     
   .btn.search-icon {
+    // Add more right padding
         padding-right: 1.5em;
     }
 
 .custom-search-banner-wrap {
+  // Left align the content of the banner
   margin: 0 auto !important;
   max-width: unset;
   color: var(--secondary);
   
   h1 {
     font-size: 4em;
+    // Left align h1
     text-align: left;
   }
   p {
@@ -40,6 +49,8 @@
   .search-menu input[type="text"] {
     border: 1px solid transparent;
     border-radius: 0.25em;
+    // OLD VALUE
+    // min-height: 60px;
     min-height: 60px;
     &:focus {
       outline: 3px solid rgba(var(--primary-rgb), 0.35);
@@ -70,6 +81,7 @@
     top: 3.25em;
     right: 1em;
   }
+  // Remove the default margin on inner div
   div {margin: 0}
 }
 
@@ -80,33 +92,42 @@
 .display-search-banner {
   #main-outlet {
     padding-top: 2em;
+    // Override the default value
+    background: #1C352A;
   }
 }
 
 body.has-sidebar-page #main-outlet-wrapper {
+  // Remove the default extra padding
   padding-left: 0px !important;
   }
 
 .category-box-inner {
-    column-gap: 16px !important;
+  // Reduce the default column gap
+  column-gap: 16px !important;
 }
 
 .sidebar-wrapper {
+  // Remove the default drop shadow
   box-shadow: none !important;
 }
 
 .category-box {
+  // Remove the default container drop shadow
   box-shadow: none !important;
+  // Use a different color variable for the border
   border: 1px solid var(--secondary-high);
+  // Remove the default logo background
   background:transparent !important;
 }
 .category-logo {
+// Remove the default logo background
 background-color: transparent !important;
-
 }
 
 .custom-category-boxes:not(.above-discovery-categories-outlet) .category-box {
-border-left-width: 1px;
+// Add the missing left border
+  border-left-width: 1px;
 }
 
 
@@ -140,6 +161,7 @@ border-left-width: 1px;
       margin-top: 2em;
     }
     p {
+      //OLD color: var(--primary);
       color: var(--primary-high);
       }
     
@@ -247,7 +269,9 @@ div.ac-wrap {
   border-radius: 4px;
 }
 .d-header {
+
   // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  // Remove the default drop shadow
 	box-shadow: none;
 }
 
@@ -361,7 +385,7 @@ html {
   }
 }
 
-// Setting the brand typeface
+// The brand typeface
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Unica77LL', sans-serif;
 }
@@ -370,6 +394,7 @@ html body #main-outlet {
   margin-top: 30px;
   margin-bottom: 50px;
   // background: var(--secondary);
+  // Deattach the background colour from variables
   background: #1e1e1e;
   border-radius: 1em;
   padding: 3em 3em 5%;
