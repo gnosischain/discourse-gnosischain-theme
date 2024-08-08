@@ -189,8 +189,12 @@ background-color: transparent !important;
 }
 
 .badge-wrapper.bullet {
+  // Remove the extra right margin
+  margin-right: 0 !important;
+  
   .badge-category-bg {
     border-radius: 0.125em;
+    margin: 0;
   }
   .badge-category-parent-bg {
     border-top-left-radius: 0.125em;
